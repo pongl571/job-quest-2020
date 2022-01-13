@@ -1,0 +1,25 @@
+const FizzBuzz = (num) => {
+    
+    const ansMod3 = num % 3; 
+    const ansMod5 = num % 5; 
+    
+    const ans = ansMod3 + ansMod5;
+    switch(ans){
+        case 0: return "FizzBuzz";
+            
+    }
+    
+    switch(ansMod3){
+        case 0: return "Fizz";
+            
+    }
+    
+    switch(ansMod5){
+        case 0: return "Buzz";
+           
+    }
+    
+}
+
+const ans = FizzBuzz(3);
+console.log(ans);
