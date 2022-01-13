@@ -1,0 +1,45 @@
+const arrayShift = (arr,condition,shiftNumber) => {
+    let arrCheck = [];
+    let i = 0;
+    let j = 0;
+    let count = (arr.length - shiftNumber);
+
+    if (condition == 'right') {
+        if( count < 0){ 
+               count = count * -1;
+               count = (arr.length - count);
+               
+            }
+           for(i = count ; i < arr.length; i++){
+                arrCheck.push( arr[i] );
+    
+            }
+            for(j = 0; j < count; j++){
+                arrCheck.push( arr[j] );
+            }
+            return arrCheck;
+    } else if (condition == 'left'){
+        if(shiftNumber > arr.length){
+               shiftNumber = shiftNumber-arr.length;
+         
+            }
+                 for(i = shiftNumber ; i < arr.length; i++){
+                 arrCheck.push( arr[i] );
+                 }
+                  for(j = 0 ; j < shiftNumber ; j++){
+                    arrCheck.push( arr[j] );
+                    
+                  }
+            return arrCheck;
+    } else {
+        return "input wrong condition"; 
+    }
+}
+//let arr = [1, 2, 3, 4 ,5];
+let arr = ['john', 'jane', 'sarah', 'alex'];
+//let condition = 'right';
+let condition = 'left';
+let numberShift = 2;
+
+const newSort = arrayShift(arr,condition,numberShift);
+console.log(newSort);
